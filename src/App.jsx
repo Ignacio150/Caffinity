@@ -9,7 +9,7 @@ import Catalogo from './Pages/Catalogo';
 import Carrito from './Pages/Carrito';
 import About from './Pages/About';
 import Contacto from './Pages/Contacto';
-import CafeDetalle from './Pages/Cafedetalle';
+import CafeDetalle from './Pages/CafeDetalle';
 import './Style/Style.css';
 
 function App() {
@@ -64,7 +64,7 @@ function App() {
           <Route path="/carrito" element={<Carrito cart={cart} removeFromCart={removeFromCart} updateQty={updateQty} clearCart={clearCart} />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacto" element={<Contacto />} />
-          <Route path="/cafe/:id" element={<Cafedetalle addToCart={addToCart} />} />
+          <Route path="/cafe/:id" element={<CafeDetalle addToCart={addToCart} />} />
           <Route path="*" element={
             <div className="container text-center mt-5">
               <h2 className="text-success">Página no encontrada</h2>
