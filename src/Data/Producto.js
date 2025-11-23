@@ -1,0 +1,68 @@
+export const productos = [
+  {
+    id: 1,
+    title: 'Pack Master Origins x50',
+    description: 'Disfrutá la selección de cafés de origen',
+    precio: '113.000,00',
+    image: '/img/https://github.com/Ignacio150/Caffinity/blob/main/public/img/Pack%20Breakfast%20x100.png.png?raw=true',
+    origen: 'Colombia',
+  },
+  {
+    id: 2,
+    title: 'Pack Nespresso Moments x60',
+    description: 'Selección de cafés para cada momento del día',
+    precio: '123.800,00',
+    image: '/img/Pack Nespresso Moments x60.png',
+    origen: 'Brasil',
+  },
+  {
+    id: 3,
+    title: 'Pack Breakfast x80',
+    description: 'Cafés para disfrutar tus mañanas',
+    precio: '163.300,00',
+    image: '/img/Pack Breakfast x80.png',
+    origen: 'Guatemala',
+  },
+  {
+    id: 4,
+    title: 'Pack Breakfast x100',
+    description: 'Cafés para disfrutar tus mañanas',
+    precio: '210.700,00',
+    image: '/img/Pack Breakfast x100.png',
+    origen: 'Guatemala',
+  },
+  {
+    id: 5,
+    title: 'Pack Intenso x40',
+    description: 'Sabores intensos y tostado profundo',
+    precio: '98.500,00',
+    image: '/img/Pack Intenso x40.png',
+    origen: 'Etiopía',
+  },
+  {
+    id: 6,
+    title: 'Pack Suave x30',
+    description: 'Cafés ligeros y delicados para cualquier momento',
+    precio: '76.200,00',
+    image: '/img/Pack Suave x30.png',
+    origen: 'Costa Rica',
+  },
+  {
+    id: 7,
+    title: 'Pack Degustación x70',
+    description: 'Variedad completa para descubrir tu favorito',
+    precio: '145.900,00',
+    image: '/img/Pack Degustación x70.png',
+    origen: 'Perú',
+  },
+  {
+    id: 8,
+    title: 'Pack Especialidad x90',
+    description: 'Selección premium de cafés de especialidad',
+    precio: '189.600,00',
+    image: '/img/Pack Especialidad x90.png',
+    origen: 'México',
+  },
+];
+
+export default productos;

@@ -1,0 +1,121 @@
+.site-header{
+  position:sticky;
+  top:0;
+  left:0;
+  width:100%;
+  height:var(--header-height);
+  display:flex;
+  align-items:center;
+  background:var(--primary-green);
+  color:#fff;
+  z-index:1100;
+  padding:0 1rem;
+  transition:height var(--trans-dur) var(--ease), background-color var(--trans-dur) var(--ease), box-shadow var(--trans-dur) var(--ease), padding var(--trans-dur) var(--ease);
+  box-shadow:none;
+  backdrop-filter:none;
+}
+
+/* header inner container (compatible con Bootstrap .container) */
+.header-inner{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+
+/* brand (logo + name) */
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:800;color:inherit}
+.brand-mark{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:8px;background:#fff;color:var(--primary-green);font-size:1.05rem;
+  transition:width var(--trans-dur) var(--ease),height var(--trans-dur) var(--ease),background var(--trans-dur) var(--ease),color var(--trans-dur) var(--ease);
+}
+.brand-name{color:#fff;font-size:1rem;transition:opacity .22s var(--ease),transform .22s var(--ease);opacity:1;transform:translateY(0);visibility:visible}
+
+/* shrink state: smaller header + transparent/blur + brand adjustments */
+.header--shrink{
+  height:var(--header-height-shrink);
+  background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+  backdrop-filter:blur(4px);
+  color:var(--primary-green);
+  box-shadow:0 6px 20px rgba(10,10,10,0.06);
+}
+.header--shrink .brand-mark{width:34px;height:34px;background:var(--primary-green);color:#fff}
+.header--shrink .brand-name{opacity:0;transform:translateY(-6px);visibility:hidden;pointer-events:none}
+
+/* nav & links */
+.nav-main{display:flex;align-items:center;gap:1rem}
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:.75rem;align-items:center}
+.nav-link{color:rgba(255,255,255,0.95);padding:.45rem .6rem;border-radius:6px;font-weight:600;transition:background .18s var(--ease),color .18s var(--ease)}
+.nav-link:hover{background:rgba(255,255,255,0.08)}
+.header--shrink .nav-link{color:var(--primary-green)}
+
+/* cart button */
+.cart-btn{padding:.35rem .6rem;border-radius:8px;background:#fff;color:var(--primary-green);font-weight:700;border:none;display:inline-flex;align-items:center;gap:.4rem}
+.header--shrink .cart-btn{background:transparent;color:var(--primary-green);border:1px solid rgba(0,0,0,0.06)}
+
+/* toggler (mobile) */
+.header-toggler{display:none;border:none;background:transparent;width:44px;height:44px;align-items:center;justify-content:center}
+.toggler-bar{width:20px;height:2px;background:#fff;margin:3px 0;border-radius:2px;display:block;transition:background .18s var(--ease),transform .18s var(--ease)}
+.header--shrink .toggler-bar{background:var(--primary-green)}
+
+/* responsive header: mobile dropdown */
+@media (max-width:991.98px){
+  .nav-main{position:absolute;right:1rem;top:100%;background:#fff;border-radius:10px;box-shadow:0 8px 24px rgba(10,10,10,0.08);padding:.5rem;transform-origin:top right;transition:transform .18s var(--ease),opacity .18s var(--ease),visibility .18s var(--ease);visibility:hidden;opacity:0;transform:translateY(-8px) scale(.98)}
+  .nav-main.open{visibility:visible;opacity:1;transform:translateY(6px) scale(1)}
+  .nav-list{flex-direction:column;gap:.4rem;min-width:160px}
+  .header-toggler{display:flex}
+  .header--shrink .nav-main{top:var(--header-height-shrink);background:rgba(255,255,255,0.96)}
+  .header--shrink .nav-main .nav-link{color:var(--primary-green)}
+}
+.btn-darkmode {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.btn-darkmode:hover {
+  color: var(--primary-green);
+}
+
+html, body, #root {
+  background: var(--bg-color, #fff);
+  color: var(--text-color, #111);
+}
+
+.card,
+.producto-card,
+.pack-card,
+.packs-info {
+  background: var(--muted-gray);
+  color: var(--text-color);
+  border-color: var(--card-border);
+}
+
+.producto-card .card-title,
+.pack-title {
+  color: var(--text-color);
+}
+
+.producto-card .card-text,
+.pack-desc,
+.packs-info .subtitle,
+.packs-info .lead {
+  color: rgba(255,255,255,0.72);
+}
+
+.price,
+.pack-price,
+.producto-card .price {
+  color: var(--primary-green);
+}
+
+.btn-buy,
+.btn-pack {
+  background: var(--primary-green);
+  color: #fff;
+}
+
+.btn-buy:hover,
+.btn-pack:hover {
+  background: var(--primary-green-700);
+}
